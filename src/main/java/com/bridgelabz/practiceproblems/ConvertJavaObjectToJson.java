@@ -2,15 +2,13 @@ package com.bridgelabz.practiceproblems;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-class User {
-    public String name;
-    public int age;
-    public String email;
+class Car {
+    public String model;
+    public int year;
 
-    public User(String name, int age, String email) {
-        this.name = name;
-        this.age = age;
-        this.email = email;
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
     }
 }
 
@@ -18,8 +16,8 @@ public class ConvertJavaObjectToJson {
     public static void main(String[] args) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            User user = new User("Sehaj", 22, "sehaj@mail.com");
-            String jsonString = objectMapper.writeValueAsString(user);
+            Car car = new Car("Maruti Dzire", 2024);
+            String jsonString = objectMapper.writeValueAsString(car);
             System.out.println(jsonString);
         }
         catch (Exception e) {
@@ -30,5 +28,5 @@ public class ConvertJavaObjectToJson {
 
 /*
 Output:
-    {"name":"Sehaj","age":22,"email":"sehaj@mail.com"}
+    {"model":"Maruti Dzire","year":2024}
  */
